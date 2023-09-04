@@ -17,4 +17,6 @@ extension Color {
     static let brandGreyBlue = Color("brandGreyBlue")
     
     static let brandMelon = Color("brandMelon")
+    
+    static let brandBackground = Color("brandBackground")
 }

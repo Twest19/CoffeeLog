@@ -37,7 +37,7 @@ final class LoginViewModel: ObservableObject {
             return false
         }
         
-        guard email.isValidEmail else {
+        guard email.contains("@") else {
             errorMessage = "Please enter a valid email."
             return false
         }

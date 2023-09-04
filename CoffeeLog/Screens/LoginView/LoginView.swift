@@ -12,27 +12,23 @@ struct LoginView: View {
     @StateObject var viewModel = LoginViewModel()
     
     var body: some View {
-
         NavigationStack {
-
-                VStack(spacing: 10) {
-                    // Header
-                    LoginHeaderView()
-                        .ignoresSafeArea()
-                        .offset(y: -90)
-                    Spacer()
-                    // Sign in form
-                    LoginFormView(viewModel: viewModel, color: .brandGreyTeal)
-                        .offset(y: -50)
-                    Spacer()
-                    // Footer
-                    LoginFooterView()
-                        .foregroundColor(Color.brandGreyTeal)
-                        .padding()
+            ZStack(alignment: .topLeading) {
+                VStack {
+                    VStack(spacing: 40) {
+//                         Background and title
+                        BackgroundView(systemImage: "cup.and.saucer.fill",
+                                       text: "Welcome to \nCoffee Buddy")
+                        
+                        LoginFormView(viewModel: viewModel, color: .brandGreyTeal)
+                        
+                        LoginFooterView()
+                        Spacer()
+                    }
                 }
-                .padding()
-
+            }
         }
+        .tint(Color.brandMelon)
     }
 }
 

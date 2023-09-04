@@ -8,19 +8,24 @@
 import SwiftUI
 
 struct LoginFooterView: View {
+    
+    @State private var showingSheet = false
+    
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
             Text("New Here?")
             NavigationLink {
-                //RegisterView()
+                RegisterView(color: .white)
             } label: {
                 VStack(alignment: .center, spacing: 10) {
                     Label("Create Account", systemImage: "person.badge.plus.fill")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                 }
+                .tint(.brandGreyTeal)
             }
         }
+        .padding(.bottom, 20)
     }
 }
 
