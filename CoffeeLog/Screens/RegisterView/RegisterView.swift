@@ -84,7 +84,8 @@ struct RegisterView: View {
                                                 imageName: "key",
                                                 backColor: color,
                                                 opacity: 1.0,
-                                                value: $viewModel.password)
+                                                value: $viewModel.password,
+                                                strength: $viewModel.passwordStrength)
                                     .focused($focusedTextField, equals: .password)
                                     .onSubmit {
                                         focusedTextField = .cPassword
@@ -97,7 +98,8 @@ struct RegisterView: View {
                                                 imageName: "key.fill",
                                                 backColor: color,
                                                 opacity: 1.0,
-                                                value: $viewModel.cPassword)
+                                                value: $viewModel.cPassword,
+                                                passwordsMatch: $viewModel.passwordsMatch)
                                     .focused($focusedTextField, equals: .cPassword)
                                     .onSubmit {
                                         focusedTextField = nil
@@ -127,7 +129,7 @@ struct RegisterView: View {
                                 SignInWithAppleButtonViewRepresentable(type: .signIn, style: .white)
                                 .frame(height: 55)
                             }
-                            .padding(.horizontal, 20)
+                            .padding([.horizontal, .top], 20)
                         }
                         Spacer()
                     }

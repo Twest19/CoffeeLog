@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8918218E2AA64D46004EE3F0 /* NavBarIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8918218D2AA64D46004EE3F0 /* NavBarIconView.swift */; };
+		8964128A2AA6F99F007DA4A7 /* PasswordStrength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896412892AA6F99F007DA4A7 /* PasswordStrength.swift */; };
 		89682C8E2AA3FA0800E343D0 /* CLTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682C8D2AA3FA0800E343D0 /* CLTabView.swift */; };
 		89682C912AA40F7200E343D0 /* ShelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682C902AA40F7100E343D0 /* ShelfView.swift */; };
 		89682C942AA456A600E343D0 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682C932AA456A600E343D0 /* Color+Ext.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		8918218D2AA64D46004EE3F0 /* NavBarIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarIconView.swift; sourceTree = "<group>"; };
+		896412892AA6F99F007DA4A7 /* PasswordStrength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrength.swift; sourceTree = "<group>"; };
 		89682C8D2AA3FA0800E343D0 /* CLTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLTabView.swift; sourceTree = "<group>"; };
 		89682C902AA40F7100E343D0 /* ShelfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfView.swift; sourceTree = "<group>"; };
 		89682C932AA456A600E343D0 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				89682C932AA456A600E343D0 /* Color+Ext.swift */,
 				89682CAE2AA5251900E343D0 /* String+Ext.swift */,
 				89FC01562AA5843300522DF7 /* FormTextField.swift */,
+				896412892AA6F99F007DA4A7 /* PasswordStrength.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89682C912AA40F7200E343D0 /* ShelfView.swift in Sources */,
+				8964128A2AA6F99F007DA4A7 /* PasswordStrength.swift in Sources */,
 				89FC01572AA5843300522DF7 /* FormTextField.swift in Sources */,
 				89C2E89E2AA05E3C00A56E3D /* HomeView.swift in Sources */,
 				89682CB32AA526A800E343D0 /* LoginFormView.swift in Sources */,
