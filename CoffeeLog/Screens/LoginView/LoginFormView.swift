@@ -31,7 +31,8 @@ struct LoginFormView: View {
                                 imageName: "envelope.fill",
                                 backColor: color,
                                 opacity: 0.8,
-                                value: $viewModel.email)
+                                value: viewModel.email,
+                                focus: $focusedTextField)
                     .focused($focusedTextField, equals: .email)
                     .onSubmit {
                         focusedTextField = .password
@@ -39,7 +40,12 @@ struct LoginFormView: View {
                     .submitLabel(.next)
                     .emailTextFieldStyle()
                 
-                CustomTextField(placeHolder: "Password", imageName: "key.fill", backColor: color, opacity: 0.8, value: $viewModel.password)
+                CustomTextField(placeHolder: "Password",
+                                imageName: "key.fill",
+                                backColor: color,
+                                opacity: 0.8,
+                                value: viewModel.password,
+                                focus: $focusedTextField)
                     .focused($focusedTextField, equals: .password)
                     .onSubmit {
                         focusedTextField = nil

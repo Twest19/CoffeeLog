@@ -20,7 +20,8 @@ struct BackgroundView: View {
     
     var body: some View {
         ZStack {
-            ZStack {Ellipse()
+            ZStack {
+                Ellipse()
                     .frame(width: 510, height: 470)
                     .padding(.leading, -200)
                     .foregroundColor(.brandGreyTeal)
@@ -40,10 +41,10 @@ struct BackgroundView: View {
             VStack {
                 Text("Coffee Buddy")
                     .multilineTextAlignment(.center)
-                Image(systemName: "person.fill")
+                Image(systemName: "cup.and.saucer.fill")
             }
-            .fontWeight(.bold)
-            .font(.system(size: 40))
+            .font(.largeTitle)
+            .bold()
             .foregroundColor(Color(uiColor: .systemBackground))
             .frame(maxWidth: .infinity)
             .padding()
