@@ -60,8 +60,7 @@ struct RegisterView: View {
                                                 imageName: "person.fill",
                                                 backColor: color,
                                                 opacity: 1.0,
-                                                value: viewModel.name,
-                                                focus: $focusedTextField)
+                                                value: $viewModel.name)
                                 .focused($focusedTextField, equals: .name)
                                 .onSubmit {
                                     focusedTextField = .email
@@ -73,8 +72,7 @@ struct RegisterView: View {
                                                 imageName: "envelope.fill",
                                                 backColor: color,
                                                 opacity: 1.0,
-                                                value: viewModel.email,
-                                                focus: $focusedTextField)
+                                                value: $viewModel.email)
                                     .focused($focusedTextField, equals: .email)
                                     .onSubmit {
                                         focusedTextField = .password
@@ -86,8 +84,7 @@ struct RegisterView: View {
                                                 imageName: "key",
                                                 backColor: color,
                                                 opacity: 1.0,
-                                                value: viewModel.password,
-                                                focus: $focusedTextField)
+                                                value: $viewModel.password)
                                     .focused($focusedTextField, equals: .password)
                                     .onSubmit {
                                         focusedTextField = .cPassword
@@ -100,8 +97,7 @@ struct RegisterView: View {
                                                 imageName: "key.fill",
                                                 backColor: color,
                                                 opacity: 1.0,
-                                                value: viewModel.cPassword,
-                                                focus: $focusedTextField)
+                                                value: $viewModel.cPassword)
                                     .focused($focusedTextField, equals: .cPassword)
                                     .onSubmit {
                                         focusedTextField = nil

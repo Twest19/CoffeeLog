@@ -31,8 +31,7 @@ struct LoginFormView: View {
                                 imageName: "envelope.fill",
                                 backColor: color,
                                 opacity: 0.8,
-                                value: viewModel.email,
-                                focus: $focusedTextField)
+                                value: $viewModel.email)
                     .focused($focusedTextField, equals: .email)
                     .onSubmit {
                         focusedTextField = .password
@@ -44,8 +43,7 @@ struct LoginFormView: View {
                                 imageName: "key.fill",
                                 backColor: color,
                                 opacity: 0.8,
-                                value: viewModel.password,
-                                focus: $focusedTextField)
+                                value: $viewModel.password)
                     .focused($focusedTextField, equals: .password)
                     .onSubmit {
                         focusedTextField = nil

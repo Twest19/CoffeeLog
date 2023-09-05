@@ -14,15 +14,8 @@ struct CustomTextField: View {
     var backColor: Color
     var opacity: Double
     
-    @State var value: String
+    @Binding var value: String
     @State private var showPassword: Bool = false
-    @FocusState.Binding var focus: FormTextField?
-    
-    @FocusState var inFocus: Field?
-    enum Field {
-        case secure, plain
-    }
-    
     
     var body: some View {
         HStack {
@@ -30,13 +23,13 @@ struct CustomTextField: View {
             
             if placeHolder == "Password" || placeHolder == "Confirm Password" {
                 ZStack(alignment: .leading) {
-                    if value.isEmpty { emptyTextField() }
+                    if $value.wrappedValue.isEmpty { emptyTextField() }
                     ZStack {
+                        // Work around for making password field visible
                         regularTextField()
-                              .opacity(showPassword ? 1 : 0)
-                        
+                            .opacity(showPassword ? 1 : 0)
                         secureTextField()
-                               .opacity(showPassword ? 0 : 1)
+                            .opacity(showPassword ? 0 : 1)
                     }
                 }
                 .overlay(alignment: .trailing) {
@@ -52,7 +45,7 @@ struct CustomTextField: View {
                 
             } else {
                 ZStack(alignment: .leading) {
-                    if value.isEmpty {
+                    if $value.wrappedValue.isEmpty {
                         emptyTextField()
                     }
                     regularTextField()
@@ -110,6 +103,6 @@ struct CustomTextField_Previews: PreviewProvider {
                         imageName: "person.fill",
                         backColor: .brandGreyTeal,
                         opacity: 0.6,
-                        value: "", focus: $focus)
+                        value: .constant(""))
     }
 }
