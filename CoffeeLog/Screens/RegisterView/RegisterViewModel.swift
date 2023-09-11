@@ -57,34 +57,43 @@ final class RegisterViewModel: ObservableObject {
     func validateAndUpdateStrength(password: String) {
         var strengthCounter = 0.0
         
-        // 8 or more characters
+        // Minimum length of 3 for any valid password
+        if password.count < 3 {
+            self.passwordStrength = 0
+            return
+        }
+        
+        // Length requirement: more weight given
         if password.count >= 8 {
-             strengthCounter += 0.30
-         }
+            strengthCounter += 0.4
+        } else if password.count >= 6 {
+            strengthCounter += 0.2
+        }
+        
+        // Check for uppercase
+        let hasUppercase = NSPredicate(format:"SELF MATCHES %@", ".*[A-Z]+.*")
+        if hasUppercase.evaluate(with: password) {
+            strengthCounter += 0.2
+        }
 
-         // Check for uppercase
-         let hasUppercase = NSPredicate(format:"SELF MATCHES %@", ".*[A-Z]+.*")
-         if hasUppercase.evaluate(with: password) {
-             strengthCounter += 0.20
-         }
+        // Check for numbers
+        let hasNumbers = NSPredicate(format:"SELF MATCHES %@", ".*[0-9]+.*")
+        if hasNumbers.evaluate(with: password) {
+            strengthCounter += 0.2
+        }
 
-         // Check for numbers
-         let hasNumbers = NSPredicate(format:"SELF MATCHES %@", ".*[0-9]+.*")
-         if hasNumbers.evaluate(with: password) {
-             strengthCounter += 0.20
-         }
+        // Check for special characters
+        let hasSpecialCharacters = NSPredicate(format:"SELF MATCHES %@", ".*[!&^%$#@()/]+.*")
+        if hasSpecialCharacters.evaluate(with: password) {
+            strengthCounter += 0.2
+        }
 
-         // Check for special characters
-         let hasSpecialCharacters = NSPredicate(format:"SELF MATCHES %@", ".*[!&^%$#@()/]+.*")
-         if hasSpecialCharacters.evaluate(with: password) {
-             strengthCounter += 0.30
-         }
-        // Progress view only goes to 1.0
-        self.passwordStrength = strengthCounter
+        // Progress view only goes to 1.0, ensure it doesn't exceed that
+        self.passwordStrength = min(strengthCounter, 1.0)
     }
+
     
     private func validatePasswordsMatch() {
-        print("IN")
         self.passwordsMatch = password == cPassword
         print(passwordsMatch)
     }
