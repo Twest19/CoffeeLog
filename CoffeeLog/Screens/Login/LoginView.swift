@@ -9,9 +9,11 @@ import SwiftUI
 
 struct LoginView: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     @StateObject var viewModel = LoginViewModel()
     
-    @Environment(\.colorScheme) var colorScheme
+    @State private var showCreate: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -28,7 +30,7 @@ struct LoginView: View {
                     LoginFormView(viewModel: viewModel)
                         .padding(.top)
                     // Button Stack
-                    VStack(spacing: 10) {
+                    VStack(spacing: 15) {
                         // login button
                         Button {
                             print("Log in clicked")
@@ -47,12 +49,24 @@ struct LoginView: View {
                     }
                     Spacer()
                     // MARK: Footer
-                    LoginFooterView()
-                        .frame(minHeight: 44)
-                        .padding(.bottom)
+                    Button {
+                        showCreate = true
+                    } label: {
+                        HStack {
+                            Text("Do not have an account?")
+                                .foregroundColor(Color(uiColor: .secondaryLabel))
+                            Text("Sign Up!")
+                        }
+                    }
+                    .frame(minHeight: 35)
+                    .padding(.bottom, 20)
                 }
             }
             .padding(.horizontal)
+            .navigationBarTitleDisplayMode(.large)
+            .navigationDestination(isPresented: $showCreate) {
+                RegisterView(showCreate: $showCreate, color: .green)
+            }
         }
         .tint(.green)
     }
