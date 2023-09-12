@@ -12,7 +12,6 @@ struct CLTabView: View {
     let logged = false
     
     var body: some View {
-        
         if logged {
             // Sign in
             loggedInView

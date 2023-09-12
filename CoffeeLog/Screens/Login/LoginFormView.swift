@@ -10,17 +10,11 @@ import AuthenticationServices
 
 struct LoginFormView: View {
     
-    @ObservedObject var viewModel: LoginViewModel
-    
-    @FocusState private var focusedTextField: FormTextField?
-    
     @Environment(\.colorScheme) var colorScheme
     
-    
-    init(viewModel: LoginViewModel) {
-        self.viewModel = viewModel
-    }
-    
+    @ObservedObject var viewModel: LoginViewModel
+    @FocusState private var focusedTextField: FormTextField?
+
     var body: some View {
         VStack(spacing: 15) {
             // Email field
@@ -52,7 +46,7 @@ struct LoginFormView: View {
                 Button("Forgot Password?") {
                     print("Create account clicked")
                 }
-                .frame(minHeight: 44, alignment: .top)
+                .frame(minHeight: 35, alignment: .top)
             }
         }
         .toolbar {
