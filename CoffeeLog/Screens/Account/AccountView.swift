@@ -15,9 +15,11 @@ struct AccountView: View {
     
     @State private var units: Bool = false
     @State private var notifications: Bool = false
+    @ObservedObject var viewModel = AccountViewModel()
     
     @EnvironmentObject var settings: Settings
     @Environment(\.openURL) var openURL
+    
     
     var body: some View {
         NavigationStack {
@@ -51,7 +53,13 @@ struct AccountView: View {
                     
                     // MARK: Settings
                     Section {
-                        Toggle("Light/Dark Mode", isOn: settings.$isDarkMode)
+                        Picker("Theme", selection: $settings.systemTheme) {
+                            ForEach(SchemeType.allCases) { theme in
+                                Text(theme.description).tag(theme.rawValue)
+                            }
+                        }
+                        .tint(.secondary)
+                        .pickerStyle(.menu)
                         Toggle("Notifications", isOn: $notifications)
                         Toggle("Units", isOn: $units)
                     } header: {
@@ -60,22 +68,44 @@ struct AccountView: View {
                     
                     // MARK: Footer: Log out, delete, T&C, Privacy Policy links
                     Section {
-                        NavigationLink {
-                            // Navigate to a safari view here
+                        Button {
+                            viewModel.isShowingTerms = true
                         } label: {
-                            Text("Terms and Conditions")
+                            HStack {
+                                Text("Terms")
+                                Spacer()
+                                Image(systemName: "link")
+                                    .foregroundColor(Color.secondary)
+                            }
+                        }
+                        .fullScreenCover(isPresented: $viewModel.isShowingTerms) {
+                            SafariView(url: viewModel.termURL)
+                                .ignoresSafeArea()
+                        }
+
+                        
+                        Button {
+                            viewModel.isShowingPolicy = true
+
+                        } label: {
+                            HStack {
+                                Text("Privacy Policy")
+                                Spacer()
+                                Image(systemName: "link")
+                                    .foregroundColor(Color.secondary)
+                            }
+                        }
+                        .fullScreenCover(isPresented: $viewModel.isShowingPolicy) {
+                            SafariView(url: viewModel.policyURL)
                         }
                         
-                        NavigationLink {
-                            // Navigate to a safari view here
-                        } label: {
-                            Text("Privacy Policy")
-                        }
-                        
-                        NavigationLink {
-                            // Navigate to a screen to send an email
-                        } label: {
-                            Text("Contact Us")
+                        HStack {
+                            Text("Contact:")
+                            Text("theappemail@email.com")
+                                .tint(.blue)
+                            Spacer()
+                            Image(systemName: "envelope.fill")
+                                .foregroundColor(Color.secondary)
                         }
                         
                     } header: {
@@ -121,6 +151,7 @@ struct AccountView: View {
             }
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
+            .tint(.primary)
         }
     }
     
@@ -135,15 +166,15 @@ struct AccountView: View {
                     .frame(width: 105, alignment: .top)
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Timothy West")
-                            .font(.title2)
+                        Text("Foo BarBar")
+                            .font(.title)
                             .fontWeight(.medium)
-                        Text("timr200019@yahoo.com")
-                            .font(.caption)
+                        Text("barfoofoo@gmail.com")
+                            .font(.headline)
                             .fontWeight(.regular)
                             .tint(.primary)
                         Text("Date Joined: 9/12/23")
-                            .font(.caption)
+                            .font(.subheadline)
                             .fontWeight(.regular)
                     }
                     // Leaves option to add badges or something in a line across the bottom
@@ -151,7 +182,7 @@ struct AccountView: View {
             }
             Spacer()
         }
-        .foregroundColor(Color(uiColor: .systemGray))
+        .foregroundColor(Color(uiColor: .label))
         .padding(.top, 10)
         .padding(.horizontal, 20)
     }

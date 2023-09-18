@@ -9,6 +9,23 @@ import SwiftUI
 
 struct CLTabView: View {
     
+    @Environment(\.colorScheme) private var colorScheme
+    @EnvironmentObject var settings: Settings
+
+    
+    private var selectedScheme: ColorScheme? {
+        guard let theme = SchemeType(rawValue: settings.systemTheme) else { return nil }
+        print(theme.rawValue)
+        switch theme {
+        case .light:
+            return .light
+        case .dark:
+            return .dark
+        default:
+            return nil
+        }
+    }
+    
     let logged = false
     
     var body: some View {
@@ -17,7 +34,7 @@ struct CLTabView: View {
             loggedInView
         } else {
             LoginView()
-                
+                .preferredColorScheme(selectedScheme)
         }
     }
     
@@ -34,11 +51,12 @@ struct CLTabView: View {
                 }
 
         }
+        .preferredColorScheme(selectedScheme)
     }
 }
 
 struct CLTabView_Previews: PreviewProvider {
     static var previews: some View {
-        CLTabView()
+        CLTabView().environmentObject(Settings())
     }
 }

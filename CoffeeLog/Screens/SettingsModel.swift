@@ -8,9 +8,7 @@
 import SwiftUI
 
 final class Settings: ObservableObject {
-    @AppStorage("isDarkMode") var isDarkMode: Bool = false {
-        didSet {
-            objectWillChange.send()
-        }
-    }
+    
+    @AppStorage("systemThemeVal") var systemTheme: Int = SchemeType.allCases.first!.rawValue
+ 
 }
