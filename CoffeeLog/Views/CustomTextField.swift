@@ -9,19 +9,14 @@ import SwiftUI
 
 struct CustomTextField: View {
     
-    let placeHolder: String
-    let imageName: String
-    let backColor = Color(uiColor: .secondaryLabel)
-    
-    @Binding var value: String
+    let iconColor = Color(uiColor: .secondaryLabel)
+    let textFieldColor = Color(uiColor: .secondarySystemBackground)
     @State private var showPassword: Bool = false
     
+    let placeHolder: String
+    let imageName: String
+    @Binding var value: String
     
-    init(placeHolder: String, imageName: String, value: Binding<String>) {
-        self.placeHolder = placeHolder
-        self.imageName = imageName
-        self._value = value
-    }
     
     var body: some View {
         HStack(alignment: .center) {
@@ -36,7 +31,7 @@ struct CustomTextField: View {
         .padding(15)
         .background(
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color(uiColor: .tertiaryLabel)).opacity(0.30))
+                .fill(Color(uiColor: .secondarySystemBackground)))
     }
     
     @ViewBuilder
@@ -65,7 +60,7 @@ struct CustomTextField: View {
             showPassword.toggle()
         } label: {
             Image(systemName: self.showPassword ? "eye" : "eye.slash")
-                .tint(backColor)
+                .tint(iconColor)
         }
         .allowsHitTesting(!value.isEmpty)
     }
@@ -73,7 +68,7 @@ struct CustomTextField: View {
     
     private func textFieldImage() -> some View {
         Image(systemName: imageName)
-            .foregroundColor(Color(uiColor: .secondaryLabel))
+            .foregroundColor(iconColor)
             .frame(width: 20, height: 20)
     }
 }

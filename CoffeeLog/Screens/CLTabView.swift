@@ -12,7 +12,7 @@ struct CLTabView: View {
     let logged = false
     
     var body: some View {
-        if logged {
+        if !logged {
             // Sign in
             loggedInView
         } else {
@@ -27,6 +27,10 @@ struct CLTabView: View {
             HomeView()
                 .tabItem {
                     Label("Home", systemImage: "house")
+                }
+            AccountView()
+                .tabItem {
+                    Label("Account", systemImage: "person.fill")
                 }
 
         }

@@ -17,6 +17,7 @@
 		89682CAD2AA5246A00E343D0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682CAC2AA5246A00E343D0 /* LoginViewModel.swift */; };
 		89682CAF2AA5251900E343D0 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682CAE2AA5251900E343D0 /* String+Ext.swift */; };
 		89682CB32AA526A800E343D0 /* LoginFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682CB22AA526A800E343D0 /* LoginFormView.swift */; };
+		8986F71D2AB7C03D0002BFD9 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986F71C2AB7C03D0002BFD9 /* SettingsModel.swift */; };
 		89C2E89C2AA05E3C00A56E3D /* CoffeeLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C2E89B2AA05E3C00A56E3D /* CoffeeLogApp.swift */; };
 		89C2E89E2AA05E3C00A56E3D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C2E89D2AA05E3C00A56E3D /* HomeView.swift */; };
 		89C2E8A02AA05E3D00A56E3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C2E89F2AA05E3D00A56E3D /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		89682CAC2AA5246A00E343D0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		89682CAE2AA5251900E343D0 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		89682CB22AA526A800E343D0 /* LoginFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormView.swift; sourceTree = "<group>"; };
+		8986F71C2AB7C03D0002BFD9 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		89C2E8982AA05E3C00A56E3D /* CoffeeLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C2E89B2AA05E3C00A56E3D /* CoffeeLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeLogApp.swift; sourceTree = "<group>"; };
 		89C2E89D2AA05E3C00A56E3D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				89682C9B2AA509E700E343D0 /* Login */,
 				89682C9A2AA509D200E343D0 /* Home */,
 				89682C8D2AA3FA0800E343D0 /* CLTabView.swift */,
+				8986F71C2AB7C03D0002BFD9 /* SettingsModel.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			files = (
 				89682C912AA40F7200E343D0 /* ShelfView.swift in Sources */,
 				89FC01572AA5843300522DF7 /* FormTextField.swift in Sources */,
+				8986F71D2AB7C03D0002BFD9 /* SettingsModel.swift in Sources */,
 				89C2E89E2AA05E3C00A56E3D /* HomeView.swift in Sources */,
 				89F6BD812AAEEBAE00FB9A5E /* RegisterFormView.swift in Sources */,
 				89F6BD842AAFE40100FB9A5E /* AccountView.swift in Sources */,
