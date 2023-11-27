@@ -13,3 +13,10 @@ The Coffee Logger is a mobile application currently in development, designed to 
 - Barcode scanning for logging coffee products
 - Map integration for finding local coffee shops
 - Recommendation system based on user's coffee preferences
+
+### In Progress
+- ~~Login screen~~
+- ~~Registration Screen~~
+- ~~Textfield validation for password strength and email validity~~
+- Currently experimenting with UI layout for main screen
+- Setting up Authentication with FireBase
