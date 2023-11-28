@@ -18,7 +18,6 @@ struct AccountView: View {
     @ObservedObject var viewModel = AccountViewModel()
     
     @EnvironmentObject var settings: Settings
-    @Environment(\.openURL) var openURL
     
     
     var body: some View {

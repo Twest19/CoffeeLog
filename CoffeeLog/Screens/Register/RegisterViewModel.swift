@@ -114,7 +114,7 @@ final class RegisterViewModel: ObservableObject {
             return false
         }
         
-        guard email.contains("@") else {
+        guard email.isValidEmail else {
             emailErrorMessage = "Invalid Email."
             return false
         }

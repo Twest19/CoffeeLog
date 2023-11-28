@@ -9,16 +9,22 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @StateObject var viewModel = HomeViewModel()
+    
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack {
                     Divider()
                     // Header: Horizontal scroll shelf
-                    ShelfView()
+                    HStack(spacing: 20) {
+                        CoffeeStatView(number: "23", title: "Streak")
+                        CoffeeStatView(number: "23", title: "Streak")
+                        CoffeeStatView(number: "23", title: "Streak")
+                    }
                     Divider()
                     // Calendar
-                    CalendarView()
+                    CalendarView(dateInterval: DateInterval(start: .distantPast, end: .distantFuture))
                     Spacer()
                 }
             }

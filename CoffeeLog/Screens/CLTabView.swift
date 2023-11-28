@@ -29,7 +29,7 @@ struct CLTabView: View {
     let logged = false
     
     var body: some View {
-        if !logged {
+        if logged {
             // Sign in
             loggedInView
         } else {
