@@ -16,7 +16,6 @@ struct CoffeeLogApp: App {
         WindowGroup {
             CLTabView()
                 .environmentObject(settings)
-                .preferredColorScheme(settings.isDarkMode ? .dark : .light)
         }
     }
 }

@@ -2,47 +2,42 @@
 //  CalendarView.swift
 //  CoffeeLog
 //
-//  Created by Tim West on 9/3/23.
+//  Created by Tim West on 10/29/23.
 //
 
 import SwiftUI
 
-struct CalendarView: View {
-    
-    @State var date = Date()
-    
-    var body: some View {
-        VStack {
-            HStack {
-                Image(systemName: "calendar")
-                Text("Coffee Streak: 200")
-                    .font(.title2)
-                Spacer()
-            }
-            .padding(.leading)
-            
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.brandMelon)
-                DatePicker("Coffee Days",
-                           selection: $date,
-                           in: Date()...,
-                           displayedComponents: [.date])
-                .tint(.brandMelon)
-                .background(Color(uiColor: .systemBackground))
-                .cornerRadius(10)
-                .padding(5)
-                .datePickerStyle(.graphical)
-                
-            }
-            .padding([.leading, .trailing, .bottom])
-            Spacer()
-        }
-    }
-}
 
-struct CalendarView_Previews: PreviewProvider {
-    static var previews: some View {
-        CalendarView()
+struct CalendarView: UIViewRepresentable {
+    
+    let dateInterval: DateInterval
+    
+    func makeUIView(context: Context) -> UICalendarView {
+        let newCalendar = UICalendarView()
+        newCalendar.delegate = context.coordinator
+        newCalendar.calendar = Calendar(identifier: .gregorian)
+        newCalendar.availableDateRange = dateInterval
+        return newCalendar
+    }
+    
+    func updateUIView(_ uiView: UICalendarView, context: Context) {
+        
+    }
+    
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator()
+    }
+    
+
+    class Coordinator: NSObject, UICalendarViewDelegate, UICalendarSelectionSingleDateDelegate {
+        func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
+            
+        }
+        
+        func dateSelection(_ selection: UICalendarSelectionSingleDate, canSelectDate dateComponents: DateComponents?) -> Bool {
+            return true
+        }
+        
     }
 }

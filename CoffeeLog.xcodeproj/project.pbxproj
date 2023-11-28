@@ -10,18 +10,23 @@
 		89682C8E2AA3FA0800E343D0 /* CLTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682C8D2AA3FA0800E343D0 /* CLTabView.swift */; };
 		89682C912AA40F7200E343D0 /* ShelfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682C902AA40F7100E343D0 /* ShelfView.swift */; };
 		89682C942AA456A600E343D0 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682C932AA456A600E343D0 /* Color+Ext.swift */; };
-		89682C962AA46B3D00E343D0 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682C952AA46B3D00E343D0 /* CalendarView.swift */; };
 		89682C982AA4F77100E343D0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682C972AA4F77100E343D0 /* LoginView.swift */; };
 		89682CA72AA519E000E343D0 /* CLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682CA62AA519E000E343D0 /* CLButton.swift */; };
 		89682CAA2AA51CB100E343D0 /* CustomModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682CA92AA51CB100E343D0 /* CustomModifier.swift */; };
 		89682CAD2AA5246A00E343D0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682CAC2AA5246A00E343D0 /* LoginViewModel.swift */; };
 		89682CAF2AA5251900E343D0 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682CAE2AA5251900E343D0 /* String+Ext.swift */; };
 		89682CB32AA526A800E343D0 /* LoginFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682CB22AA526A800E343D0 /* LoginFormView.swift */; };
+		89712DA42AB8097800C6E3B7 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89712DA32AB8097800C6E3B7 /* SafariView.swift */; };
+		89712DA62AB80A2D00C6E3B7 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89712DA52AB80A2D00C6E3B7 /* AccountViewModel.swift */; };
 		8986F71D2AB7C03D0002BFD9 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986F71C2AB7C03D0002BFD9 /* SettingsModel.swift */; };
+		8986F71F2AB7FC310002BFD9 /* SchemeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986F71E2AB7FC310002BFD9 /* SchemeType.swift */; };
+		899DD8DB2AEF4EB10083F985 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899DD8DA2AEF4EB10083F985 /* CalendarView.swift */; };
+		899DD8DD2AEF549A0083F985 /* CoffeeStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899DD8DC2AEF549A0083F985 /* CoffeeStatView.swift */; };
 		89C2E89C2AA05E3C00A56E3D /* CoffeeLogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C2E89B2AA05E3C00A56E3D /* CoffeeLogApp.swift */; };
 		89C2E89E2AA05E3C00A56E3D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C2E89D2AA05E3C00A56E3D /* HomeView.swift */; };
 		89C2E8A02AA05E3D00A56E3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C2E89F2AA05E3D00A56E3D /* Assets.xcassets */; };
 		89C2E8A32AA05E3D00A56E3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89C2E8A22AA05E3D00A56E3D /* Preview Assets.xcassets */; };
+		89ED9FC92AB9560A00F68AA5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ED9FC82AB9560A00F68AA5 /* HomeViewModel.swift */; };
 		89F6BD812AAEEBAE00FB9A5E /* RegisterFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F6BD802AAEEBAE00FB9A5E /* RegisterFormView.swift */; };
 		89F6BD842AAFE40100FB9A5E /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F6BD832AAFE40100FB9A5E /* AccountView.swift */; };
 		89FC01512AA5706C00522DF7 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC01502AA5706C00522DF7 /* RegisterView.swift */; };
@@ -37,19 +42,24 @@
 		89682C8D2AA3FA0800E343D0 /* CLTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLTabView.swift; sourceTree = "<group>"; };
 		89682C902AA40F7100E343D0 /* ShelfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelfView.swift; sourceTree = "<group>"; };
 		89682C932AA456A600E343D0 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
-		89682C952AA46B3D00E343D0 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		89682C972AA4F77100E343D0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		89682CA62AA519E000E343D0 /* CLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLButton.swift; sourceTree = "<group>"; };
 		89682CA92AA51CB100E343D0 /* CustomModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifier.swift; sourceTree = "<group>"; };
 		89682CAC2AA5246A00E343D0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		89682CAE2AA5251900E343D0 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		89682CB22AA526A800E343D0 /* LoginFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormView.swift; sourceTree = "<group>"; };
+		89712DA32AB8097800C6E3B7 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		89712DA52AB80A2D00C6E3B7 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		8986F71C2AB7C03D0002BFD9 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		8986F71E2AB7FC310002BFD9 /* SchemeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchemeType.swift; sourceTree = "<group>"; };
+		899DD8DA2AEF4EB10083F985 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		899DD8DC2AEF549A0083F985 /* CoffeeStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeStatView.swift; sourceTree = "<group>"; };
 		89C2E8982AA05E3C00A56E3D /* CoffeeLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C2E89B2AA05E3C00A56E3D /* CoffeeLogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeLogApp.swift; sourceTree = "<group>"; };
 		89C2E89D2AA05E3C00A56E3D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		89C2E89F2AA05E3D00A56E3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89C2E8A22AA05E3D00A56E3D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		89ED9FC82AB9560A00F68AA5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		89F6BD802AAEEBAE00FB9A5E /* RegisterFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormView.swift; sourceTree = "<group>"; };
 		89F6BD832AAFE40100FB9A5E /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		89FC01502AA5706C00522DF7 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -88,6 +98,7 @@
 				89682CA82AA51CA200E343D0 /* Modifiers */,
 				89682C932AA456A600E343D0 /* Color+Ext.swift */,
 				89682CAE2AA5251900E343D0 /* String+Ext.swift */,
+				8986F71E2AB7FC310002BFD9 /* SchemeType.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -109,9 +120,11 @@
 		89682C9A2AA509D200E343D0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				89682C952AA46B3D00E343D0 /* CalendarView.swift */,
 				89682C902AA40F7100E343D0 /* ShelfView.swift */,
 				89C2E89D2AA05E3C00A56E3D /* HomeView.swift */,
+				89ED9FC82AB9560A00F68AA5 /* HomeViewModel.swift */,
+				899DD8DA2AEF4EB10083F985 /* CalendarView.swift */,
+				899DD8DC2AEF549A0083F985 /* CoffeeStatView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -176,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				89FC015D2AA6321400522DF7 /* AppleView.swift */,
+				89712DA32AB8097800C6E3B7 /* SafariView.swift */,
 			);
 			path = UIViewRepresentable;
 			sourceTree = "<group>";
@@ -184,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				89F6BD832AAFE40100FB9A5E /* AccountView.swift */,
+				89712DA52AB80A2D00C6E3B7 /* AccountViewModel.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -281,12 +296,15 @@
 				89FC01572AA5843300522DF7 /* FormTextField.swift in Sources */,
 				8986F71D2AB7C03D0002BFD9 /* SettingsModel.swift in Sources */,
 				89C2E89E2AA05E3C00A56E3D /* HomeView.swift in Sources */,
+				89712DA42AB8097800C6E3B7 /* SafariView.swift in Sources */,
 				89F6BD812AAEEBAE00FB9A5E /* RegisterFormView.swift in Sources */,
+				899DD8DB2AEF4EB10083F985 /* CalendarView.swift in Sources */,
+				89712DA62AB80A2D00C6E3B7 /* AccountViewModel.swift in Sources */,
 				89F6BD842AAFE40100FB9A5E /* AccountView.swift in Sources */,
 				89682CB32AA526A800E343D0 /* LoginFormView.swift in Sources */,
 				89FC01532AA57C0A00522DF7 /* RegisterViewModel.swift in Sources */,
+				8986F71F2AB7FC310002BFD9 /* SchemeType.swift in Sources */,
 				89FC015C2AA6297700522DF7 /* CustomTextField.swift in Sources */,
-				89682C962AA46B3D00E343D0 /* CalendarView.swift in Sources */,
 				89FC015E2AA6321400522DF7 /* AppleView.swift in Sources */,
 				89682CAF2AA5251900E343D0 /* String+Ext.swift in Sources */,
 				89682C8E2AA3FA0800E343D0 /* CLTabView.swift in Sources */,
@@ -295,6 +313,8 @@
 				89682C982AA4F77100E343D0 /* LoginView.swift in Sources */,
 				89FC01602AA6373900522DF7 /* HeaderView.swift in Sources */,
 				89682CAD2AA5246A00E343D0 /* LoginViewModel.swift in Sources */,
+				899DD8DD2AEF549A0083F985 /* CoffeeStatView.swift in Sources */,
+				89ED9FC92AB9560A00F68AA5 /* HomeViewModel.swift in Sources */,
 				89C2E89C2AA05E3C00A56E3D /* CoffeeLogApp.swift in Sources */,
 				89682C942AA456A600E343D0 /* Color+Ext.swift in Sources */,
 				89682CAA2AA51CB100E343D0 /* CustomModifier.swift in Sources */,
