@@ -4,6 +4,11 @@
 
 The Coffee Logger is a mobile application currently in development, designed to help coffee enthusiasts track and rate their coffee experiences, both at home and at cafes. Built with SwiftUI and Firebase, the app aims to offer a seamless experience to its users.
 
+## Technologies Used
+- ### Programming Language: Swift
+- ### Framework: SwiftUI
+- ### Other: Firebase Auth, Firestore
+
 ## Features
 
 ### Planned Features
