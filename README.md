@@ -23,8 +23,24 @@ The Coffee Logger is a mobile application currently in development, designed to 
 - ~~Login screen~~
 - ~~Registration Screen~~
 - ~~Textfield validation for password strength and email validity~~
-- Currently experimenting with UI layout for main screen
+- Currently experimenting with UI layout for the main screen
 - Setting up Authentication with FireBase
 
 
 ### Current Progress Screenshots
+#### Dark Mode
+<p float="left">
+  <img src="CLScreenshots/loginDark.png" width="220" />
+  <img src="CLScreenshots/createPassStrengthDark.png" width="220" />
+  <img src="CLScreenshots/createPassEqualDark.png" width="220" />
+  <img src="CLScreenshots/createFieldValidDark.png" width="220" />
+</p>
+
+#### Light Mode
+<p float="left">
+  <img src="CLScreenshots/loginLight.png" width="220" />
+  <img src="CLScreenshots/createPassStrength.png" width="220" />
+  <img src="CLScreenshots/createPassEqual.png" width="220" />
+  <img src="CLScreenshots/createFieldValid.png" width="220" />
+</p>
+
