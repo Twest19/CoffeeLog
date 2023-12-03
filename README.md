@@ -30,17 +30,17 @@ The Coffee Logger is a mobile application currently in development, designed to 
 ### Current Progress Screenshots
 #### Dark Mode
 <p float="left">
-  <img src="CLScreenshots/loginDark.png" width="220" />
-  <img src="CLScreenshots/createPassStrengthDark.png" width="220" />
-  <img src="CLScreenshots/createPassEqualDark.png" width="220" />
-  <img src="CLScreenshots/createFieldValidDark.png" width="220" />
+  <img src="https://github.com/Twest19/RMScreenshots/blob/main/CLScreenshots/loginDark.png" width="220" />
+  <img src="https://github.com/Twest19/RMScreenshots/blob/main/CLScreenshots/createPassStrengthDark.png" width="220" />
+  <img src="https://github.com/Twest19/RMScreenshots/blob/main/CLScreenshots/createPassEqualDark.png" width="220" />
+  <img src="https://github.com/Twest19/RMScreenshots/blob/main/CLScreenshots/createFieldValidDark.png" width="220" />
 </p>
 
 #### Light Mode
 <p float="left">
-  <img src="CLScreenshots/loginLight.png" width="220" />
-  <img src="CLScreenshots/createPassStrength.png" width="220" />
-  <img src="CLScreenshots/createPassEqual.png" width="220" />
-  <img src="CLScreenshots/createFieldValid.png" width="220" />
+  <img src="https://github.com/Twest19/RMScreenshots/blob/main/CLScreenshots/loginLight.png" width="220" />
+  <img src="https://github.com/Twest19/RMScreenshots/blob/main/CLScreenshots/createPassStrength.png" width="220" />
+  <img src="https://github.com/Twest19/RMScreenshots/blob/main/CLScreenshots/createPassEqual.png" width="220" />
+  <img src="https://github.com/Twest19/RMScreenshots/blob/main/CLScreenshots/createFieldValid.png" width="220" />
 </p>
 
