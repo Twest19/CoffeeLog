@@ -28,7 +28,12 @@ struct RegisterView: View {
                 // login button
                 Button {
                     print("Create Clicked")
-                    viewModel.validateForm()
+                    if viewModel.validateForm() {
+                        // create the users account and log them in
+                        // navigate to next page
+                    } else {
+                        // show some error by the fields
+                    }
                 } label: {
                     Label("Create Account", systemImage: "person.fill")
                         .font(.title3)

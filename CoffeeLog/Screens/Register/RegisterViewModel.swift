@@ -7,37 +7,29 @@
 
 import SwiftUI
 
-
+@MainActor
 final class RegisterViewModel: ObservableObject {
     
     @Published var name = ""
     @Published var email = ""
+    @Published var password = ""
+    @Published var cPassword = ""
     
-    @Published var password = "" {
-        didSet {
-            validateAndUpdateStrength(password: password)
-        }
-    }
+    @Published private(set) var matchingPasswords: Bool = false
+    @Published private(set) var passwordStrength: Double = 0
     
-    @Published var cPassword = "" {
-        didSet {
-            validatePasswordsMatch()
-        }
-    }
+    @Published private(set) var eightLength: Bool = false
+    @Published private(set) var oneCapital: Bool = false
+    @Published private(set) var oneNumb: Bool = false
+    @Published private(set) var oneSpecial: Bool = false
     
-    @Published var passwordsMatch: Bool = false
-    @Published var passwordStrength: Double = 0
+    @Published private(set) var nameError: String?
+    @Published private(set) var emailError: String?
+    @Published private(set) var passwordError: String?
+    @Published private(set) var cPasswordError: String?
+
     
-    @Published var eightLength: Bool = false
-    @Published var oneCapital: Bool = false
-    @Published var oneNumb: Bool = false
-    @Published var oneSpecial: Bool = false
-    
-    @Published var nameErrorMessage: String?
-    @Published var emailErrorMessage: String?
-    @Published var passwordErrorMessage: String?
-    @Published var cPasswordErrorMessage: String?
-    
+    func testMatchingPasswords() { matchingPasswords = cPassword == password }
     
     func validateAndUpdateStrength(password: String) {
         var strengthCounter = 0.0
@@ -50,14 +42,14 @@ final class RegisterViewModel: ObservableObject {
             strengthCounter += 0.2
             oneCapital = true
         }
-
+        
         // Check for numbers
         let hasNumbers = NSPredicate(format:"SELF MATCHES %@", ".*[0-9]+.*")
         if hasNumbers.evaluate(with: password) {
             strengthCounter += 0.2
             oneNumb = true
         }
-
+        
         // Check for special characters
         let hasSpecialCharacters = NSPredicate(format:"SELF MATCHES %@", ".*[!@#$%^&*()\\-_=+\\{\\}\\[\\]\\|:;'\"<>,.?/~]+.*")
         if hasSpecialCharacters.evaluate(with: password) {
@@ -80,90 +72,51 @@ final class RegisterViewModel: ObservableObject {
         } else if password.count >= 6 {
             strengthCounter += 0.2
         }
-
+        
         // Progress view only goes to 1.0, ensure it doesn't exceed that
         self.passwordStrength = min(strengthCounter, 1.0)
     }
+    
+    func validateName() {
+        nameError = FieldValidation.validateName(name)?.rawValue
+    }
+    
+    func validateEmail() {
+        emailError = FieldValidation.validateEmail(email)?.rawValue
+    }
+    
+    func validatePassword() {
+        passwordError = FieldValidation.validatePassword(password)?.rawValue
+    }
+    
+    func validateConfirmPassword() {
+        cPasswordError = FieldValidation.validatePassword(cPassword)?.rawValue
+    }
+    
+    // Only want to display pass do not match when other errors have cleared up
+    // Also, only display under the confirm field
+    func validatePasswordsMatch() {
+        // Only set error if there are no other errors in the confirm password
+        testMatchingPasswords()
+        if cPasswordError == nil && !matchingPasswords {
+            cPasswordError = ValidationError.passwordsDoNotMatch.rawValue
+        }
+    }
 
-    // Used for confirm password status bar
-    private func validatePasswordsMatch() -> Bool {
-        self.passwordsMatch = password == cPassword
-        return self.passwordsMatch
-    }
-    
-    // Check name, likely going to only accept first names
-    func validateName() -> Bool {
-        guard !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            nameErrorMessage = "Name is required."
-            return false
-        }
-        
-        guard name.count <= 50 else {
-            nameErrorMessage = "Sorry, max of 50 characters."
-            return false
-        }
-        
-        nameErrorMessage = nil
-        return true
-    }
-    
-    // Check email
-    func validateEmail() -> Bool {
-        guard !email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            emailErrorMessage = "Email is required."
-            return false
-        }
-        
-        guard email.isValidEmail else {
-            emailErrorMessage = "Invalid Email."
-            return false
-        }
-        
-        emailErrorMessage = nil
-        return true
-    }
-    
-    // Check Password
-    func validatePassword() -> Bool {
-        guard !password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            passwordErrorMessage = "Password is required."
-            return false
-        }
-        
-        guard password.count >= 8 && password.count <= 25 else {
-            passwordErrorMessage = "Invalid Password length."
-            return false
-        }
-        
-        passwordErrorMessage = nil
-        return true
-    }
-    
-    // Check Confirm Password
-    func validateCPassword() -> Bool {
-        guard !cPassword.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            cPasswordErrorMessage = "Confirm Password is required."
-            return false
-        }
-        
-        guard validatePasswordsMatch() else {
-            cPasswordErrorMessage = "Passwords do not match!"
-            return false
-        }
-        
-        cPasswordErrorMessage = nil
-        return true
-    }
-    
-    
-    // Validates all form fields
     func validateForm() -> Bool {
-        let isNameValid = validateName()
-        let isEmailValid = validateEmail()
-        let isPasswordValid = validatePassword()
-        let isCPasswordValid = validateCPassword()
+        // Call individual validation methods
+        validateName()
+        validateEmail()
+        validatePassword()
+        validateConfirmPassword()
+        validatePasswordsMatch()
         
-        return isNameValid && isEmailValid && isPasswordValid && isCPasswordValid
-    }
+        // Check if any error messages are set
+        let hasErrors = nameError?.isEmpty == false ||
+                        emailError?.isEmpty == false ||
+                        passwordError?.isEmpty == false ||
+                        cPasswordError?.isEmpty == false
 
+        return !hasErrors
+    }
 }

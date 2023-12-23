@@ -16,6 +16,11 @@
 		89682CAD2AA5246A00E343D0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682CAC2AA5246A00E343D0 /* LoginViewModel.swift */; };
 		89682CAF2AA5251900E343D0 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682CAE2AA5251900E343D0 /* String+Ext.swift */; };
 		89682CB32AA526A800E343D0 /* LoginFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89682CB22AA526A800E343D0 /* LoginFormView.swift */; };
+		896EE7E72B36262C002F898F /* TextFieldErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EE7E62B36262C002F898F /* TextFieldErrorView.swift */; };
+		896EE7E92B365768002F898F /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EE7E82B365768002F898F /* Errors.swift */; };
+		896EE7EB2B365E50002F898F /* FieldValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EE7EA2B365E50002F898F /* FieldValidation.swift */; };
+		896EE7EE2B36B542002F898F /* ConfirmPasswordBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EE7ED2B36B542002F898F /* ConfirmPasswordBar.swift */; };
+		896EE7F02B36B613002F898F /* PasswordStrengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896EE7EF2B36B613002F898F /* PasswordStrengthView.swift */; };
 		89712DA42AB8097800C6E3B7 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89712DA32AB8097800C6E3B7 /* SafariView.swift */; };
 		89712DA62AB80A2D00C6E3B7 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89712DA52AB80A2D00C6E3B7 /* AccountViewModel.swift */; };
 		8986F71D2AB7C03D0002BFD9 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8986F71C2AB7C03D0002BFD9 /* SettingsModel.swift */; };
@@ -48,6 +53,11 @@
 		89682CAC2AA5246A00E343D0 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		89682CAE2AA5251900E343D0 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		89682CB22AA526A800E343D0 /* LoginFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormView.swift; sourceTree = "<group>"; };
+		896EE7E62B36262C002F898F /* TextFieldErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldErrorView.swift; sourceTree = "<group>"; };
+		896EE7E82B365768002F898F /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		896EE7EA2B365E50002F898F /* FieldValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidation.swift; sourceTree = "<group>"; };
+		896EE7ED2B36B542002F898F /* ConfirmPasswordBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordBar.swift; sourceTree = "<group>"; };
+		896EE7EF2B36B613002F898F /* PasswordStrengthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrengthView.swift; sourceTree = "<group>"; };
 		89712DA32AB8097800C6E3B7 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		89712DA52AB80A2D00C6E3B7 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		8986F71C2AB7C03D0002BFD9 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
@@ -87,6 +97,7 @@
 			children = (
 				89682CA62AA519E000E343D0 /* CLButton.swift */,
 				89FC015B2AA6297700522DF7 /* CustomTextField.swift */,
+				896EE7E62B36262C002F898F /* TextFieldErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -99,6 +110,8 @@
 				89682C932AA456A600E343D0 /* Color+Ext.swift */,
 				89682CAE2AA5251900E343D0 /* String+Ext.swift */,
 				8986F71E2AB7FC310002BFD9 /* SchemeType.swift */,
+				896EE7E82B365768002F898F /* Errors.swift */,
+				896EE7EA2B365E50002F898F /* FieldValidation.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -145,6 +158,16 @@
 				89682CA92AA51CB100E343D0 /* CustomModifier.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		896EE7EC2B36B514002F898F /* RegisterSubViews */ = {
+			isa = PBXGroup;
+			children = (
+				89F6BD802AAEEBAE00FB9A5E /* RegisterFormView.swift */,
+				896EE7ED2B36B542002F898F /* ConfirmPasswordBar.swift */,
+				896EE7EF2B36B613002F898F /* PasswordStrengthView.swift */,
+			);
+			path = RegisterSubViews;
 			sourceTree = "<group>";
 		};
 		89C2E88F2AA05E3C00A56E3D = {
@@ -206,9 +229,9 @@
 		89FC014F2AA5706200522DF7 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				896EE7EC2B36B514002F898F /* RegisterSubViews */,
 				89FC01502AA5706C00522DF7 /* RegisterView.swift */,
 				89FC01522AA57C0A00522DF7 /* RegisterViewModel.swift */,
-				89F6BD802AAEEBAE00FB9A5E /* RegisterFormView.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -292,9 +315,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				896EE7EE2B36B542002F898F /* ConfirmPasswordBar.swift in Sources */,
 				89682C912AA40F7200E343D0 /* ShelfView.swift in Sources */,
 				89FC01572AA5843300522DF7 /* FormTextField.swift in Sources */,
 				8986F71D2AB7C03D0002BFD9 /* SettingsModel.swift in Sources */,
+				896EE7E92B365768002F898F /* Errors.swift in Sources */,
 				89C2E89E2AA05E3C00A56E3D /* HomeView.swift in Sources */,
 				89712DA42AB8097800C6E3B7 /* SafariView.swift in Sources */,
 				89F6BD812AAEEBAE00FB9A5E /* RegisterFormView.swift in Sources */,
@@ -308,17 +333,20 @@
 				89FC015E2AA6321400522DF7 /* AppleView.swift in Sources */,
 				89682CAF2AA5251900E343D0 /* String+Ext.swift in Sources */,
 				89682C8E2AA3FA0800E343D0 /* CLTabView.swift in Sources */,
+				896EE7F02B36B613002F898F /* PasswordStrengthView.swift in Sources */,
 				89FC01512AA5706C00522DF7 /* RegisterView.swift in Sources */,
 				89682CA72AA519E000E343D0 /* CLButton.swift in Sources */,
 				89682C982AA4F77100E343D0 /* LoginView.swift in Sources */,
 				89FC01602AA6373900522DF7 /* HeaderView.swift in Sources */,
 				89682CAD2AA5246A00E343D0 /* LoginViewModel.swift in Sources */,
+				896EE7E72B36262C002F898F /* TextFieldErrorView.swift in Sources */,
 				899DD8DD2AEF549A0083F985 /* CoffeeStatView.swift in Sources */,
 				89ED9FC92AB9560A00F68AA5 /* HomeViewModel.swift in Sources */,
 				89C2E89C2AA05E3C00A56E3D /* CoffeeLogApp.swift in Sources */,
 				89682C942AA456A600E343D0 /* Color+Ext.swift in Sources */,
 				89682CAA2AA51CB100E343D0 /* CustomModifier.swift in Sources */,
 				89FC015A2AA594E500522DF7 /* User.swift in Sources */,
+				896EE7EB2B365E50002F898F /* FieldValidation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
