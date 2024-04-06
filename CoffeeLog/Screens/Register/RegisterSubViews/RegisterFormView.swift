@@ -56,8 +56,8 @@ struct RegisterFormView: View {
                                 imageName: "key",
                                 value: $viewModel.password)
                 .focused($focusedTextField, equals: .password)
-                .onChange(of: viewModel.password) { password in
-                    viewModel.validateAndUpdateStrength(password: password)
+                .onChange(of: viewModel.password) { _, newValue in
+                    viewModel.validateAndUpdateStrength(password: newValue)
                 }
                 .onSubmit {
                     viewModel.validatePassword()
@@ -78,7 +78,7 @@ struct RegisterFormView: View {
                                 imageName: "key.fill",
                                 value: $viewModel.cPassword)
                 .focused($focusedTextField, equals: .cPassword)
-                .onChange(of: viewModel.cPassword) { cPassword in
+                .onChange(of: viewModel.cPassword) {
                     viewModel.testMatchingPasswords()
                 }
                 .onSubmit {
