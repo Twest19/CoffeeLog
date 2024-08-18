@@ -24,7 +24,7 @@ The Coffee Logger is a mobile application currently in development, designed to 
 - ~~Registration Screen~~
 - ~~Textfield validation for password strength and email validity~~
 - Currently experimenting with UI layout for the main screen
-- Setting up Authentication with FireBase
+- Setting up Authentication with Firebase
 
 
 ### Current Progress Screenshots
